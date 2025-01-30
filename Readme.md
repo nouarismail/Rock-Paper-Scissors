@@ -5,19 +5,7 @@
 
 A hybrid REST/gRPC solution for multiplayer Rock-Paper-Scissors games with real-time gameplay and currency transactions.
 
-## Table of Contents
-- [Solution Structure](#solution-structure)
-- [Technical Stack](#technical-stack)
-- [Getting Started](#getting-started)
-- [API Endpoints](#api-endpoints)
-- [Client Commands](#client-commands)
-- [Database Setup](#database-setup)
-- [Key Implementation Details](#key-implementation-details)
-- [Troubleshooting](#troubleshooting)
 
----
-
-## Solution Structure
 
 ```
 RockPaperScissors/
