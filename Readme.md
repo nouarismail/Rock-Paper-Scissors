@@ -1,7 +1,6 @@
 ```markdown
 # Rock-Paper-Scissors Multiplayer Game
 
-![Architecture Diagram](https://via.placeholder.com/800x400?text=Solution+Architecture+Diagram)
 
 A hybrid REST/gRPC solution for multiplayer Rock-Paper-Scissors games with real-time gameplay and currency transactions.
 
