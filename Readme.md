@@ -74,13 +74,7 @@ dotnet ef database update --project RockPaperScissors.API
 | `/api/transactions/create`    | POST   | Transfer credits between players
 
 ### gRPC Services (Port 5001)
-```protobuf
-service GameService {
-  rpc ListGames(Empty) returns (GameListResponse);
-  rpc JoinGame(JoinRequest) returns (stream GameUpdate);
-  rpc SubmitMove(MoveRequest) returns (stream MoveResult);
-}
-```
+
 
 ---
 
@@ -97,7 +91,7 @@ service GameService {
 
 ---
 
-## Database Setup
+
 
 ### Seeded Users
 ```csharp
