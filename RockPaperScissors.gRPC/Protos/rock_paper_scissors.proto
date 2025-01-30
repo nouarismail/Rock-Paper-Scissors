@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+option csharp_namespace = "RockPaperScissorsApi.gRPC";
+
+service GameService {
+  // View balance
+  rpc GetBalance (UserRequest) returns (BalanceResponse);
+  
+  // Get list of available games
+  rpc ListGames (Empty) returns (GameListResponse);
+  
+  // Connect to a game by ID
+  rpc JoinGame (JoinGameRequest) returns (stream JoinGameResponse);
+
+  // Return to a game by ID
+  rpc ReturnToGame (ReturnToGameRequest) returns (ReturnToGameResponse);
+  
+  // Submit a move (Rock/Paper/Scissors)
+  rpc SubmitMove (MoveRequest) returns (stream MoveResponse);
+}
+
+// Request/Response Messages
+message UserRequest {
+  string userId = 1;
+}
+
+message BalanceResponse {
+  double balance = 1; // Changed from decimal to double
+}
+
+message GameInfo {
+  string matchId = 1;
+  double betAmount = 2; // Changed from decimal to double
+  bool hasWaitingPlayer = 3;
+}
+
+message GameListResponse {
+  repeated GameInfo games = 1;
+}
+
+message JoinGameRequest {
+  string userId = 1;
+  string matchId = 2;
+}
+
+message JoinGameResponse {
+  enum Status {
+    WAITING = 0;
+    READY = 1;
+    ERROR = 2;
+  }
+  Status status = 1;
+  string message = 2;
+}
+
+message ReturnToGameRequest {
+  string userId = 1;
+  string matchId = 2;
+}
+
+message ReturnToGameResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message MoveRequest {
+  string userId = 1;
+  string matchId = 2;
+  string move = 3; // "Rock", "Paper", or "Scissors"
+}
+
+message MoveResponse {
+ enum Status {
+    PENDING = 0;
+    READY = 1;
+    RESULT = 2;
+    ERROR = 3;
+  }
+  Status status = 1;
+  string details = 2;
+}
+
+message Empty {}

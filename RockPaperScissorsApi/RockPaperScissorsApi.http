@@ -1,0 +1,6 @@
+@RockPaperScissorsApi_HostAddress = http://localhost:5064
+
+GET {{RockPaperScissorsApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
