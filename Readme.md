@@ -1,23 +1,10 @@
 ```markdown
 # Rock-Paper-Scissors Multiplayer Game
 
-![Architecture Diagram](https://via.placeholder.com/800x400?text=Solution+Architecture+Diagram)
 
 A hybrid REST/gRPC solution for multiplayer Rock-Paper-Scissors games with real-time gameplay and currency transactions.
 
-## Table of Contents
-- [Solution Structure](#solution-structure)
-- [Technical Stack](#technical-stack)
-- [Getting Started](#getting-started)
-- [API Endpoints](#api-endpoints)
-- [Client Commands](#client-commands)
-- [Database Setup](#database-setup)
-- [Key Implementation Details](#key-implementation-details)
-- [Troubleshooting](#troubleshooting)
 
----
-
-## Solution Structure
 
 ```
 RockPaperScissors/
@@ -74,13 +61,7 @@ dotnet ef database update --project RockPaperScissors.API
 | `/api/transactions/create`    | POST   | Transfer credits between players
 
 ### gRPC Services (Port 5001)
-```protobuf
-service GameService {
-  rpc ListGames(Empty) returns (GameListResponse);
-  rpc JoinGame(JoinRequest) returns (stream GameUpdate);
-  rpc SubmitMove(MoveRequest) returns (stream MoveResult);
-}
-```
+
 
 ---
 
@@ -97,7 +78,7 @@ service GameService {
 
 ---
 
-## Database Setup
+
 
 ### Seeded Users
 ```csharp
