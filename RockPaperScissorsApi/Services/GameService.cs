@@ -23,7 +23,11 @@ namespace RockPaperScissorsApi
             _matchManager = matchManager;
         }
 
-
+        public override async Task<BalanceResponse> GetBalance(UserRequest request, ServerCallContext context)
+        {
+            var user = await _userManager.FindByIdAsync(request.UserId);
+            return new BalanceResponse { Balance = (double)user.Balance };
+        }
 
         
         public override async Task<GameListResponse> ListGames(Empty request, ServerCallContext context)
