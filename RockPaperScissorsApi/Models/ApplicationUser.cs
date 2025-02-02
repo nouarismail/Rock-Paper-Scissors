@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
 namespace RockPaperScissorsApi.Models
@@ -6,6 +7,7 @@ namespace RockPaperScissorsApi.Models
     {
         public decimal Balance { get; set; } = 1000;
         public string DisplayName { get; set; }
+
         public ApplicationUser()
         {
             

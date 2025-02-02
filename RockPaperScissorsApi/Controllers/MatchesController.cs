@@ -34,7 +34,7 @@ public class MatchesController : ControllerBase
                     return BadRequest("Insufficient balance for the bet.");
 
                 
-                player.Balance -= request.BetAmount;
+
                 await _userManager.UpdateAsync(player);
 
                 

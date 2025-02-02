@@ -14,6 +14,10 @@ namespace RockPaperScissorsApi.Services
         public List<IServerStreamWriter<MoveResponse>> MoveStreams { get; } = new();
         public bool IsReady => !string.IsNullOrEmpty(Player1Id) && !string.IsNullOrEmpty(Player2Id);
         public bool ResultSent { get; set; }
+
+        public bool BalancesUpdated { get; set; }
+
+        public TaskCompletionSource<MoveResponse> ResultCompletion { get; set; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
     }
     public class MatchManager
     {
